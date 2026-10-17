@@ -198,3 +198,14 @@
  #homePage .lower-visual .art{inset:-10px -12px}
  #homePage .quote{padding:10px 6px 25px}
 }
+
+/* V14 PA-2 — Ajustements ciblés de la page d'accueil. */
+@media (min-width:751px){
+  /* Rapproche les Archives de la recherche, sans chevauchement. */
+  #homePage .archive{margin-top:-50px}
+}
+/* La composition basse (illustration + citation) a été supprimée du HTML. */
+#homePage .lower{display:none!important}
+@media(max-width:750px){
+  #homePage .archive{margin-top:-25px}
+}
