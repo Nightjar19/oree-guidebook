@@ -209,3 +209,14 @@
 @media(max-width:750px){
   #homePage .archive{margin-top:-25px}
 }
+
+/* V14 PA-3 — Accueil compact sur grands écrans : les quatre cartes visibles sans défilement. */
+@media (min-width:1101px) and (min-height:760px){
+  #homePage .hero{height:clamp(510px,68vh,620px);min-height:0}
+  #homePage .hero-copy{top:clamp(48px,8vh,80px)}
+  #homePage .archive{margin-top:-65px;padding-bottom:24px}
+  #homePage .archive-heading{margin-bottom:18px;gap:7px}
+  #homePage .archive-heading p{padding-bottom:10px}
+  #homePage .tile{min-height:195px}
+}
+/* Sur écran moins haut, ne pas comprimer les textes dans le bandeau. */
