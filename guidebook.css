@@ -194,3 +194,29 @@
   #homePage .archive-heading {gap:10px; margin-bottom:18px}
   #homePage .archive-heading p {font-size:12px}
 }
+/* PA — ajustements visuels */
+#homePage .hero:before{
+  background:none !important;
+}
+
+#homePage .hero .art{
+  filter:none !important;
+}
+
+#homePage .hero-search-wrap{
+  max-width:560px !important;
+  width:100% !important;
+}
+
+#homePage .hero-search{
+  padding:10px 16px !important;
+  min-height:44px;
+}
+
+#homePage .hero-search input{
+  font-size:13px !important;
+}
+
+#homePage .hero-search input::placeholder{
+  font-size:13px !important;
+}
