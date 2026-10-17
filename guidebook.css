@@ -220,3 +220,157 @@
 #homePage .hero-search input::placeholder{
   font-size:13px !important;
 }
+/* ========= PA : harmoniser le sommaire ========= */
+#homePage ~ * .nav,
+.shell .nav {
+  background:
+    linear-gradient(180deg, rgba(61, 45, 95, 0.82) 0%, rgba(53, 39, 84, 0.88) 100%) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: inset -1px 0 0 rgba(255,255,255,.05);
+}
+
+/* Texte du sommaire légèrement plus lumineux */
+.shell .nav,
+.shell .nav a,
+.shell .nav .navlabel,
+.shell .nav strong,
+.shell .nav em {
+  color: #f2e8f8;
+}
+
+.shell .nav .navlabel,
+.shell .nav #menu a,
+.shell .nav .back {
+  opacity: .9;
+}
+
+/* ========= Comètes dans le sommaire ========= */
+.shell .nav {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-comets {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shell .nav > *:not(.nav-comets) {
+  position: relative;
+  z-index: 1;
+}
+
+.comet {
+  position: absolute;
+  width: 90px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,.95),
+    rgba(214,192,255,.75),
+    rgba(255,255,255,0));
+  box-shadow:
+    0 0 8px rgba(255,255,255,.55),
+    0 0 18px rgba(205,185,255,.35);
+  transform: rotate(-28deg);
+  opacity: 0;
+}
+
+.comet::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 8px rgba(255,255,255,.9),
+    0 0 16px rgba(220,200,255,.8);
+}
+
+.c1 {
+  top: 18%;
+  left: -120px;
+  animation: navComet 9s linear infinite;
+  animation-delay: 0s;
+}
+
+.c2 {
+  top: 48%;
+  left: -140px;
+  animation: navComet 11s linear infinite;
+  animation-delay: 3s;
+}
+
+.c3 {
+  top: 76%;
+  left: -130px;
+  animation: navComet 10s linear infinite;
+  animation-delay: 6s;
+}
+
+@keyframes navComet {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-28deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: .75;
+  }
+  30% {
+    opacity: .9;
+  }
+  55% {
+    opacity: .65;
+  }
+  100% {
+    transform: translateX(380px) translateY(-120px) rotate(-28deg);
+    opacity: 0;
+  }
+}
+
+/* ========= Étoiles / poussières plus visibles sur la PA ========= */
+#homePage .hero .dust span {
+  font-size: 18px !important;
+  opacity: .75 !important;
+  color: rgba(255, 245, 255, .95) !important;
+  text-shadow:
+    0 0 10px rgba(255,255,255,.65),
+    0 0 18px rgba(220,200,255,.5);
+  animation-duration: 4.5s !important;
+}
+
+/* Positionnement un peu plus lisible */
+#homePage .hero .dust span:nth-child(1) { top: 18%; left: 18%; }
+#homePage .hero .dust span:nth-child(2) { top: 28%; left: 62%; }
+#homePage .hero .dust span:nth-child(3) { top: 62%; left: 12%; }
+#homePage .hero .dust span:nth-child(4) { top: 44%; left: 84%; }
+
+/* Si tu veux en ajouter 2 de plus dans le HTML */
+#homePage .hero .dust span:nth-child(5) { top: 20%; left: 80%; }
+#homePage .hero .dust span:nth-child(6) { top: 70%; left: 55%; }
+
+/* Animation plus visible */
+@keyframes heroTwinkle {
+  0%, 100% {
+    transform: scale(.85);
+    opacity: .35;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: .95;
+  }
+}
+
+#homePage .hero .dust span {
+  animation-name: heroTwinkle !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+}
